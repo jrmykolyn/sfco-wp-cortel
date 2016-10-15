@@ -7,7 +7,7 @@
 */
 ?>
 <article class="proj-wrap col-xs-12">
-    <a href="#">
+    <a href="<?= esc_url( get_permalink( $post ) ); ?>">
         <div class="proj-img-wrap col-xs-12 col-sm-8">
             <?php
             $post_image = get_the_post_thumbnail( $post->ID, 'large' );
@@ -30,7 +30,7 @@
     </a>
     <div class="proj-info col-sm-4">
         <div class="proj-info-header">
-            <h2 class="proj-info-title"><a href="#"><?= $post->post_title; ?></a></h2>
+            <h2 class="proj-info-title"><a href="<?= esc_url( get_permalink( $post ) ); ?>"><?= $post->post_title; ?></a></h2>
 			<?php
 			$categories = get_categories();
 
