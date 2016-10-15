@@ -9,7 +9,17 @@
 <article class="proj-wrap col-xs-12">
     <a href="#">
         <div class="proj-img-wrap col-xs-12 col-sm-8">
-                <img src="<?= get_stylesheet_directory_uri(); ?>/images/placeholder/placeholder__project-image.png" />
+            <?php
+            $post_image = get_the_post_thumbnail( $post->ID, 'large' );
+
+            if ( isset( $post_image ) && $post_image !== '' ):
+                echo $post_image;
+            else:
+            ?>
+            <img src="<?= get_stylesheet_directory_uri(); ?>/images/placeholder/placeholder__project-image.png" />
+            <?php
+            endif;
+            ?>
             <div class="proj-title-wrap">
                 <div class="proj-title"><h2><?= $post->post_title; ?></h2></div>
             </div>
