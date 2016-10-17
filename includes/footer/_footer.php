@@ -1,9 +1,9 @@
 <footer>
     <section class="content-footer row">
         <section class="footer-about col-xs-12 col-sm-8">
-            <h3><?php /* 'Footer Title' HERE */ ?></h3>
+            <h3><?= get_option( 'footer_message_title' ); ?></h3>
             <p>
-                <?php /* 'Footer Body' HERE */ ?>
+                <?= get_option( 'footer_message_body' ); ?>
             </p>
         </section>
         <?php
